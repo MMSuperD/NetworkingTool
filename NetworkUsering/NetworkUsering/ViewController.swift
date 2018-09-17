@@ -18,6 +18,11 @@ class ViewController: UIViewController,URLSessionDelegate {
       //  demo2()
        // demo3()
         demo4()
+        
+        print("%@",self)
+        
+        WDLog(self)
+        
     }
 
     func demo1() -> () {

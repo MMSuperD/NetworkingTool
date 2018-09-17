@@ -489,3 +489,61 @@ extension Array {
     
 }
 
+//MARK: 常用函数集合
+
+/// Device is Ipad
+///
+/// - Returns: Bool
+func isIpad() -> (Bool) {
+    return UIDevice.current.userInterfaceIdiom == UIUserInterfaceIdiom.phone ? false:true
+}
+
+/// Device is Iphone
+///
+/// - Returns: Bool
+func isIphone() -> (Bool) {
+     return UIDevice.current.userInterfaceIdiom == UIUserInterfaceIdiom.pad ? false:true
+}
+
+
+/// current Device is iphoneX
+///
+/// - Returns: Bool
+func isIphoneX() -> (Bool) {
+    return UIScreen.main.bounds.size.height == 812 ? true : false
+}
+
+///全局打印函数
+func WDLog<T>(_ message:T,file:String = #file,funcName:String = #function,lineNum:Int = #line){
+    
+    #if DEBUG
+    
+    let file = (file as NSString).lastPathComponent;
+    
+    print("\(file)--lineNum:\(lineNum)--\(message)");
+    
+    #endif
+}
+
+
+//MARK: 常用常量集合
+/// 屏幕的宽度
+let SCREEN_WIDTH  = UIScreen.main.bounds.size.width
+
+/// 屏幕的高度
+let SCREEN_HEIGHT = UIScreen.main.bounds.size.height
+
+/// navigationBar 的高度
+let HEIGHT_NAVCONTENTBAR = 44.0
+
+/// statusBar 状态栏的高度
+let HEIGHT_STATUSBAR = isIphoneX() ? 44.0:20.0
+
+/// navigationBar 的高度
+let HEIGHT_NAVBAR = isIphoneX() ? 88.0:64.0
+
+///TabBar 的高度
+let HEIGHT_TABBAR = isIphoneX() ? 83.0:49.0
+
+
+
